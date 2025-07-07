@@ -11,7 +11,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<HomeSearchPressed>((event, emit) async {
       emit(HomeLoadInProgress());
       try {
-        const String apiKey = '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';
+        const String apiKey = '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';
         final response = await http.post(
           Uri.parse('https://openrouter.ai/api/v1/chat/completions'),
           headers: {
