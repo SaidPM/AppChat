@@ -1,6 +1,7 @@
 import 'package:chapp/features/home/presentation/initialview.dart';
 import 'package:flutter/material.dart';
 
+import 'features/home/presentation/failureview.dart';
 import 'features/home/presentation/loadingview.dart';
 
 void main(){
@@ -13,7 +14,7 @@ class Pol extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ChatAI',
-      home: Loadingg()
+      home: FailureV()
     );
   }
 }
