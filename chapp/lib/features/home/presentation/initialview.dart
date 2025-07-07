@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:chapp/features/home/presentation/bloc/home_bloc.dart';
 
 class InicialV extends StatelessWidget {
   const InicialV({super.key});
@@ -37,7 +39,12 @@ class InicialV extends StatelessWidget {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                  },
+                    if (controller.text.isNotEmpty) {
+                        final homeBloc = BlocProvider.of<HomeBloc>(context);
+                        homeBloc.add(HomeSearchPressed(query: controller.text));
+                        controller.clear();
+                      }
+                    },
                   child: const Text('Enviar', style: TextStyle(color: Colors.black),),
                 ),
               ],
