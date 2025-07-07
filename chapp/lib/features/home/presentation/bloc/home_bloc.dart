@@ -11,7 +11,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<HomeSearchPressed>((event, emit) async {
       emit(HomeLoadInProgress());
       try {
-        const String apiKey = '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';
+        const String apiKey = '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';
         final response = await http.post(
           Uri.parse('https://openrouter.ai/api/v1/chat/completions'),
           headers: {
@@ -38,6 +38,11 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       } catch (e) {
         emit(HomeLoadFailure(message: 'Exception: $e'));
       }
+
+    });
+    on<HomeInitialEvent>((event, emit) {
+      print('HomeInitialEvent processed');
+      emit(HomeInitial());
     });
   }
 }
