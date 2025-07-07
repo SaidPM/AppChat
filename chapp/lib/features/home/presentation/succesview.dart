@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SuccesV extends StatelessWidget {
-  const SuccesV({
-    super.key,
-  });
-
+  final String response;
+  const SuccesV({super.key, required this.response});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +61,17 @@ class SuccesV extends StatelessWidget {
                         ),
                       ],
                     ),
-                    
+                    child: Text(
+                        response,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          height: 1.5,
+                        ),
+                        textAlign: TextAlign.left,
+                        maxLines: null, // Permite líneas ilimitadas
+                        overflow: TextOverflow.visible, // Evita recorte del texto
+                      ),
                     ),
                   
                   const SizedBox(height: 20),
