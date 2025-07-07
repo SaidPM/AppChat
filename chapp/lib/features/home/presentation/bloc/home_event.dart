@@ -15,3 +15,7 @@ final class HomeSearchPressed extends HomeEvent {
   @override
   List<Object> get props => [query];
 }
+
+final class HomeInitialEvent extends HomeEvent {
+  const HomeInitialEvent();
+}
